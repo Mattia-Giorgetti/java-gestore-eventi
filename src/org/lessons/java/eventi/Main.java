@@ -1,5 +1,6 @@
 package org.lessons.java.eventi;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Scanner;
@@ -78,6 +79,25 @@ public class Main {
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }
+//        TEST MILESTONE 3 e 4
+
+        LocalTime orario = LocalTime.of(20,30);
+        LocalDate data = LocalDate.of(2023,9,23);
+        BigDecimal prezzo = new BigDecimal("49.9990");
+
+        Concerto concerto = new Concerto("Promessi Sposi", data,150,orario,prezzo);
+        System.out.println(concerto);
+
+        System.out.println();
+        String titolo = "Shakespear Season";
+        ProgrammaEventi programmaEventi = new ProgrammaEventi(titolo);
+
+        programmaEventi.addEvento(new Evento("Amleto",data,150));
+        programmaEventi.addEvento(new Evento("Giulietta e Romeo",data,250));
+        programmaEventi.addEvento(new Evento("Riccardo III",data,95));
+        System.out.println(programmaEventi.getEventiFromDate(data));
+        System.out.println(programmaEventi.getNumeroEventi());
+
         scan.close();
     }
 }
