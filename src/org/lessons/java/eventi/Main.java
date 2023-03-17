@@ -97,6 +97,7 @@ public class Main {
         programmaEventi.addEvento(new Evento("Riccardo III",data,95));
         System.out.println(programmaEventi.getEventiFromDate(data));
         System.out.println(programmaEventi.getNumeroEventi());
+        System.out.println(programmaEventi.eventiOrdinati());
 
         scan.close();
     }

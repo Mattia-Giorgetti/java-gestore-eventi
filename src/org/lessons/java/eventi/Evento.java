@@ -3,7 +3,7 @@ package org.lessons.java.eventi;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Evento {
+public class Evento implements Comparable<Evento>{
 //    ATTRIBUTI
     private String titolo;
     private LocalDate data;
@@ -103,5 +103,14 @@ public class Evento {
     @Override
     public String toString() {
         return "Evento: " + getFormatData(data) + "-" + getTitolo();
+    }
+
+    @Override
+    public int compareTo(Evento o) {
+        int comparaDate = data.compareTo(o.data);
+        if (comparaDate == 0){
+            return titolo.compareTo(o.titolo);
+        }
+        return comparaDate;
     }
 }

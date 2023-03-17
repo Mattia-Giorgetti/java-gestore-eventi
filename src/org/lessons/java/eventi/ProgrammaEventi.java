@@ -1,8 +1,7 @@
 package org.lessons.java.eventi;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ProgrammaEventi {
     private String titolo;
@@ -34,5 +33,9 @@ public class ProgrammaEventi {
     }
     public void removeEventi(){
     this.eventi.clear();
+    }
+    public List<Evento> eventiOrdinati(){
+        Collections.sort(eventi);
+        return eventi;
     }
 }
